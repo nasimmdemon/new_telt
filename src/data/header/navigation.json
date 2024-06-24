@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Home",
+    "to": "#!"
+  },
+
+  {
+    "title": "Blog",
+    "to": "#!"
+  },
+  {
+    "title": "About Us",
+    "to": "#!"
+  },
+  {
+    "title": "Contact Us",
+    "to": "/pages/contact-us"
+  }
+]
