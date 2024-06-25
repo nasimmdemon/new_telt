@@ -10,28 +10,9 @@ export default function Navigator({ disableSubmenu, className }) {
 
   function renderMenu() {
     return menuData.map((item, index) => {
-      if (item.title === "Home") {
-        return (
-          <li
-            className={`relative ${pathname === "/" ? "active" : ""}`}
-            key={index}
-          >
-            <Link href="/">
-              <span>{item.title}</span>
-            </Link>
-          </li>
-        );
-      }
-
       return (
         <li
-          className={`relative ${
-            pathname.includes(
-              "/" + convertToSlug(item.title.toLowerCase()) + "/"
-            )
-              ? "active"
-              : ""
-          }`}
+          className={`relative ${pathname === item.to ? "active" : ""}`}
           key={index}
         >
           <Link href={process.env.PUBLIC_URL + item.to}>

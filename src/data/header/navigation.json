@@ -1,16 +1,16 @@
 [
   {
     "title": "Home",
-    "to": "#!"
+    "to": "/"
   },
 
   {
     "title": "Blog",
-    "to": "#!"
+    "to": "/blog"
   },
   {
     "title": "About Us",
-    "to": "#!"
+    "to": "/about-us"
   },
   {
     "title": "Contact Us",
