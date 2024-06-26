@@ -11,7 +11,7 @@ export default function MenuOne({ container }) {
       <div className={renderContainer(container)}>
         <div className="menu__wrapper">
           <h1>
-            <Link href="/" className="menu__wrapper__logo block">
+            <Link href="/" className="menu__wrapper__logo block w-48">
               <img src="/images/logo_black.png" alt="Logo" />
             </Link>
           </h1>

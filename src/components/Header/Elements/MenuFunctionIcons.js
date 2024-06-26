@@ -35,7 +35,7 @@ export default function MenuFunctionIcons(props) {
             </div>
           )}
           <Link
-            href={"/pages/contact-us"}
+            href={"/contact"}
             className="button-main text-button-sm max-sm:hidden"
           >
             Contact
