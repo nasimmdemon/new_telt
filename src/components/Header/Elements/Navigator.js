@@ -15,7 +15,7 @@ export default function Navigator({ disableSubmenu, className }) {
           className={`relative ${pathname === item.to ? "active" : ""}`}
           key={index}
         >
-          <Link href={process.env.PUBLIC_URL + item.to}>
+          <Link href={item.to}>
             <span>{item.title}</span>
           </Link>
         </li>

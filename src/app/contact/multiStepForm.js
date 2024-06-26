@@ -88,12 +88,13 @@ const MultiStepForm = () => {
             <label className="block mb-2 text-blue-500">
               Select options for Step 1:
             </label>
-            <div className="mb-4">
+
+            <div className="mb-4 flex mt-12">
               <div
-                className={`flex items-center mb-2 p-2 border rounded-lg cursor-pointer ${
+                className={`flex w-full mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step1 === "Option 1"
-                    ? "bg-blue-100 border-blue-500"
-                    : "border-gray-300"
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
                 }`}
                 onClick={() => setFormData({ ...formData, step1: "Option 1" })}
               >
@@ -107,10 +108,10 @@ const MultiStepForm = () => {
                 Option 1
               </div>
               <div
-                className={`flex items-center mb-2 p-2 border rounded-lg cursor-pointer ${
+                className={`flex w-full mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step1 === "Option 2"
-                    ? "bg-blue-100 border-blue-500"
-                    : "border-gray-300"
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
                 }`}
                 onClick={() => setFormData({ ...formData, step1: "Option 2" })}
               >
@@ -250,14 +251,14 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="py-16 flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-lg bg-white p-8 rounded shadow-lg">
+    <div className="pb-44 pt-12 flex items-center justify-center bg-black ">
+      <div className="w-[70%] pb-6 bg-white p-8 rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold mb-6">Multi-step Form</h2>
         <div className="relative pt-1">
           <div className="flex mb-2 items-center justify-between">
-            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-barColor">
               <div
-                className="bg-blue-600 h-2.5 rounded-full"
+                className="bg-black h-2.5 rounded-full"
                 style={{ width: `${(currentStep / steps.length) * 100}%` }}
               ></div>
             </div>
@@ -266,7 +267,7 @@ const MultiStepForm = () => {
         <form onSubmit={handleSubmit}>
           {renderStepContent()}
 
-          <div className="flex justify-between mt-4">
+          <div className="flex justify-between mt-32">
             {currentStep > 1 && (
               <button
                 type="button"
