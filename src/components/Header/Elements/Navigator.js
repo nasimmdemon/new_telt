@@ -1,9 +1,9 @@
 import Link from "next/link";
 import classNames from "classnames";
-import menuData from "@/data/header/navigation.json";
+import menuData from "../../../data/header/navigation.json";
 import * as Icon from "@phosphor-icons/react/dist/ssr";
 import { usePathname } from "next/navigation";
-import { convertToSlug } from "@/common/utils";
+import { convertToSlug } from "../../../common/utils";
 
 export default function Navigator({ disableSubmenu, className }) {
   const pathname = usePathname();

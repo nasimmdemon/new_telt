@@ -1,4 +1,4 @@
-import LayoutOne from "@/components/Layout/LayoutOne";
+import LayoutOne from "../components/Layout/LayoutOne";
 import SliderOne from "@/components/Sections/Slider/SliderOne";
 import AboutOne from "@/components/Sections/About/AboutOne";
 import BenefitOne from "@/components/Sections/Benefit/BenefitOne";
