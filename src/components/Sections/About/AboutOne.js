@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const AboutOne = () => {
+const AboutOne = (props) => {
   return (
     <section className="about-block">
       <div className="container">
-        <div className="content rounded-2xl bg-linear-blue md:p-10 p-7">
+        <div className={`content rounded-2xl ${props.bg} md:p-10 p-7`}>
           <div className="heading flex max-lg:flex-col gap-y-4 md:pb-10 pb-8 border-b border-line">
             <div className="w-full xl:w-5/12 lg:w-1/2">
               <div className="tag text-label bg-blue text-white">

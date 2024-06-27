@@ -28,6 +28,8 @@ module.exports = {
         themeColor: "#4682B4",
         barColor: "#e3e3e3",
         barActive: "#f7f7f7",
+        about2Bg:
+          "linear-gradient(90deg, hsla(350, 73%, 44%, 1) 0%, hsla(274, 65%, 12%, 1) 100%)",
       },
     },
     container: {
