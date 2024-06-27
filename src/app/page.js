@@ -15,7 +15,7 @@ export default function Home() {
         <SliderOne className="-style-1 lg:py-[60px] py-10" />
         <AboutOne bg="bg-linear-blue" />
         <ServiceOne data={serviceData} start={6} limit={16} />
-        <AboutOne bg="bg-gradient-to-r from-indigo-800  shadow" />
+        <AboutOne bg="bg-gradient-to-r from-indigo-800 to-[#6f32a8] shadow" />
         <BrandOne classname={"bg-white lg:py-20 md:py-14 py-10"} />
 
         <TestimonialOne data={testimonialData} />
