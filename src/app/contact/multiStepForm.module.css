@@ -1,0 +1,5 @@
+.phoneInput input {
+  height: 45px !important;
+  width: 100% !important;
+  outline: none;
+}

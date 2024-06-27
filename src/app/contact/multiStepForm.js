@@ -4,6 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Select from "react-select";
 import countries from "react-select-country-list";
+import Styles from "./multiStepForm.module.css";
 
 const steps = [
   { id: 1, label: "Step 1" },
@@ -23,6 +24,7 @@ const MultiStepForm = () => {
     email: "",
     phone: "",
     country: "",
+    name: "",
   });
 
   const handleRadioChange = (e, step) => {
@@ -73,7 +75,8 @@ const MultiStepForm = () => {
         return (
           formData.email !== "" &&
           formData.phone !== "" &&
-          formData.country !== ""
+          formData.country !== "" &&
+          formData.name !== ""
         );
       default:
         return false;
@@ -88,10 +91,9 @@ const MultiStepForm = () => {
             <label className="block mb-2 text-blue-500">
               Select options for Step 1:
             </label>
-
-            <div className="mb-4 flex mt-12">
+            <div className="mb-4 flex flex-col sm:flex-row mt-12">
               <div
-                className={`flex w-full mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step1 === "Option 1"
                     ? "bg-barActive border-black text-black"
                     : "border-grey"
@@ -103,12 +105,12 @@ const MultiStepForm = () => {
                   value="Option 1"
                   checked={formData.step1 === "Option 1"}
                   onChange={(e) => handleRadioChange(e, "step1")}
-                  className="mr-2"
+                  className="mr-2 bg-black"
                 />
                 Option 1
               </div>
               <div
-                className={`flex w-full mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step1 === "Option 2"
                     ? "bg-barActive border-black text-black"
                     : "border-grey"
@@ -133,12 +135,12 @@ const MultiStepForm = () => {
             <label className="block mb-2 text-blue-500">
               Select options for Step 2:
             </label>
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col sm:flex-row mt-12">
               <div
-                className={`flex items-center mb-2 p-2 border rounded-lg cursor-pointer ${
+                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step2 === "Option 1"
-                    ? "bg-blue-100 border-blue-500"
-                    : "border-gray-300"
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
                 }`}
                 onClick={() => setFormData({ ...formData, step2: "Option 1" })}
               >
@@ -152,10 +154,10 @@ const MultiStepForm = () => {
                 Option 1
               </div>
               <div
-                className={`flex items-center mb-2 p-2 border rounded-lg cursor-pointer ${
+                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step2 === "Option 2"
-                    ? "bg-blue-100 border-blue-500"
-                    : "border-gray-300"
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
                 }`}
                 onClick={() => setFormData({ ...formData, step2: "Option 2" })}
               >
@@ -177,12 +179,12 @@ const MultiStepForm = () => {
             <label className="block mb-2 text-blue-500">
               Select options for Step 3:
             </label>
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col sm:flex-row mt-12">
               <div
-                className={`flex items-center mb-2 p-2 border rounded-lg cursor-pointer ${
+                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step3 === "Option 1"
-                    ? "bg-blue-100 border-blue-500"
-                    : "border-gray-300"
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
                 }`}
                 onClick={() => setFormData({ ...formData, step3: "Option 1" })}
               >
@@ -196,10 +198,10 @@ const MultiStepForm = () => {
                 Option 1
               </div>
               <div
-                className={`flex items-center mb-2 p-2 border rounded-lg cursor-pointer ${
+                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
                   formData.step3 === "Option 2"
-                    ? "bg-blue-100 border-blue-500"
-                    : "border-gray-300"
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
                 }`}
                 onClick={() => setFormData({ ...formData, step3: "Option 2" })}
               >
@@ -218,6 +220,15 @@ const MultiStepForm = () => {
       case 4:
         return (
           <div>
+            <label className="block mb-2 text-blue-500">Name:</label>
+            <input
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded mb-4"
+              required
+            />
             <label className="block mb-2 text-blue-500">Email Address:</label>
             <input
               name="email"
@@ -228,14 +239,17 @@ const MultiStepForm = () => {
               required
             />
             <label className="block mb-2 text-blue-500">Phone Number:</label>
-            <PhoneInput
-              country={"us"}
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              containerClass="mb-4"
-              inputClass="w-full p-2 border border-gray-300 rounded"
-              required
-            />
+            <div className="w-[100%]">
+              <PhoneInput
+                country={"us"}
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                containerClass="mb-4"
+                inputClass="w-[100%] p-2 border border-gray rounded"
+                required
+                className={Styles.phoneInput}
+              />
+            </div>
             <label className="block mb-2 text-blue-500">Select Country:</label>
             <Select
               options={countryOptions}
@@ -251,37 +265,38 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="pb-44 pt-12 flex items-center justify-center bg-black ">
-      <div className="w-[70%] pb-6 bg-white p-8 rounded-xl shadow-lg">
-        <h2 className="text-2xl font-bold mb-6">Multi-step Form</h2>
-        <div className="relative pt-1">
+    <div className="pb-44 pt-12 flex items-center justify-center bg-black">
+      <div className="w-[70%] pb-6 bg-white p-8 rounded-xl shadow-lg relative transition-transform duration-500">
+        <h2 className="text-2xl font-bold mb-6">Telt</h2>
+        <div className="relative pt-1 mb-4">
           <div className="flex mb-2 items-center justify-between">
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-barColor">
               <div
-                className="bg-black h-2.5 rounded-full"
+                className="bg-black h-2.5 rounded-full transition-all duration-500"
                 style={{ width: `${(currentStep / steps.length) * 100}%` }}
               ></div>
             </div>
           </div>
         </div>
         <form onSubmit={handleSubmit}>
-          {renderStepContent()}
-
-          <div className="flex justify-between mt-32">
+          <div className={`step-content transition-transform duration-500`}>
+            {renderStepContent()}
+          </div>
+          <div className="flex justify-between mt-12 bottom-0 left-0 w-full p-8">
             {currentStep > 1 && (
               <button
                 type="button"
                 onClick={handlePrev}
-                className="bg-blue text-white px-4 py-2 rounded"
+                className=" text-black px-4 py-2 rounded"
               >
-                Previous
+                Back
               </button>
             )}
             {currentStep < 4 && (
               <button
                 type="button"
                 onClick={handleNext}
-                className="bg-blue text-white px-4 py-2 rounded"
+                className="bg-[#2a2a2a] text-white px-4 py-2 rounded "
               >
                 Next
               </button>
@@ -289,7 +304,7 @@ const MultiStepForm = () => {
             {currentStep === 4 && (
               <button
                 type="submit"
-                className="bg-green text-white px-4 py-2 rounded"
+                className="bg-[#2a2a2a] text-white px-4 py-2 rounded ml-4"
               >
                 Submit
               </button>
