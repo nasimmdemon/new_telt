@@ -416,8 +416,9 @@ const MultiStepForm = () => {
 
   return (
     <div className="pb-44 pt-12 flex items-center justify-center bg-black">
-      <div className="w-[70%] pb-6 bg-white p-8 rounded-xl shadow-lg relative transition-transform duration-500">
-        <h2 className="text-2xl font-bold mb-6">Multi-step Form</h2>
+      <div className="w-[70%] max-sm:w-[95%] max-w-[1250px] pb-6 bg-white p-8 rounded-xl shadow-lg relative transition-transform duration-500">
+        <h2 className="text-2xl font-bold ">TELT</h2>
+        <p className="mb-6">Let's boost your business</p>
         <div className="relative pt-1 mb-4">
           <div className="flex mb-2 items-center justify-between">
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-barColor">

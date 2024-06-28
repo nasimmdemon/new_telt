@@ -28,7 +28,7 @@ export default function SliderOne({ data, className }) {
               </Link>
               <Link
                 className={`${Styles.contactButton} button-main bg-grey`}
-                href="/pages/contact-us"
+                href="/contact"
               >
                 Kontakta oss
               </Link>

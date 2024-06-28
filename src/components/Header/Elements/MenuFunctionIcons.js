@@ -38,7 +38,7 @@ export default function MenuFunctionIcons(props) {
             href={"/contact"}
             className="button-main text-button-sm max-sm:hidden"
           >
-            Contact
+            Get A quote
           </Link>
         </div>
         <div className="list__icons flex items-center">
