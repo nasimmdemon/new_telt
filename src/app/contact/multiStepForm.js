@@ -7,31 +7,185 @@ import countries from "react-select-country-list";
 import Styles from "./multiStepForm.module.css";
 
 const steps = [
-  { id: 1, label: "Step 1" },
-  { id: 2, label: "Step 2" },
-  { id: 3, label: "Step 3" },
-  { id: 4, label: "Step 4" },
+  { id: 1, label: "Select Service" },
+  { id: 2, label: "Question 1" },
+  { id: 3, label: "Question 2" },
+  { id: 4, label: "Question 3" },
+  { id: 5, label: "Personal Info" },
 ];
+
+const services = [
+  "SEO",
+  "Sociala medier",
+  "En webbshop",
+  "Hjälp med en befintlig webbplats eller blogg",
+  "Konverteringsökning",
+  "Vet ej",
+];
+
+const questions = {
+  SEO: [
+    {
+      question: "What is your primary goal with SEO?",
+      options: [
+        "Increase organic traffic",
+        "Improve search engine ranking",
+        "Generate leads",
+        "Enhance brand awareness",
+      ],
+    },
+    {
+      question: "Which SEO services are you interested in?",
+      options: ["On-page SEO", "Off-page SEO", "Technical SEO", "SEO Audit"],
+    },
+    {
+      question: "Do you have a specific target audience for SEO?",
+      options: [
+        "Local audience",
+        "National audience",
+        "International audience",
+        "Not sure",
+      ],
+    },
+  ],
+  "Sociala medier": [
+    {
+      question: "What social media platforms do you use?",
+      options: ["Facebook", "Instagram", "Twitter", "LinkedIn"],
+    },
+    {
+      question: "What type of content do you want to create?",
+      options: ["Images", "Videos", "Blog posts", "Infographics"],
+    },
+    {
+      question: "What is your primary goal with social media?",
+      options: [
+        "Increase followers",
+        "Engage with audience",
+        "Promote products/services",
+        "Drive website traffic",
+      ],
+    },
+  ],
+  "En webbshop": [
+    {
+      question: "What type of products do you sell?",
+      options: [
+        "Physical goods",
+        "Digital products",
+        "Services",
+        "Subscriptions",
+      ],
+    },
+    {
+      question: "Which e-commerce platform do you use?",
+      options: ["Shopify", "WooCommerce", "Magento", "Other"],
+    },
+    {
+      question: "What features are you looking for in a web shop?",
+      options: [
+        "Responsive design",
+        "Secure payment gateway",
+        "User-friendly interface",
+        "SEO-friendly",
+      ],
+    },
+  ],
+  "Hjälp med en befintlig webbplats eller blogg": [
+    {
+      question: "What issues are you facing with your current website?",
+      options: [
+        "Slow loading speed",
+        "Poor design",
+        "Low traffic",
+        "Technical issues",
+      ],
+    },
+    {
+      question: "What improvements do you want to make?",
+      options: [
+        "Redesign website",
+        "Improve SEO",
+        "Add new features",
+        "Fix bugs",
+      ],
+    },
+    {
+      question: "Do you need ongoing maintenance?",
+      options: ["Yes", "No", "Maybe", "Not sure"],
+    },
+  ],
+  Konverteringsökning: [
+    {
+      question: "What is your current conversion rate?",
+      options: ["Less than 1%", "1-3%", "3-5%", "More than 5%"],
+    },
+    {
+      question: "What conversion goals do you have?",
+      options: [
+        "Increase sales",
+        "Generate leads",
+        "Increase sign-ups",
+        "Improve engagement",
+      ],
+    },
+    {
+      question:
+        "What conversion optimization techniques are you interested in?",
+      options: [
+        "A/B testing",
+        "Landing page optimization",
+        "User experience improvement",
+        "Personalization",
+      ],
+    },
+  ],
+  "Vet ej": [
+    {
+      question: "What business goals are you looking to achieve?",
+      options: [
+        "Increase brand awareness",
+        "Generate more leads",
+        "Boost sales",
+        "Improve customer engagement",
+      ],
+    },
+    {
+      question: "Which areas do you think need improvement?",
+      options: [
+        "Website design",
+        "SEO",
+        "Social media presence",
+        "Conversion rates",
+      ],
+    },
+    {
+      question: "Would you like a consultation to discuss your needs?",
+      options: ["Yes", "No", "Maybe", "Not sure"],
+    },
+  ],
+};
 
 const countryOptions = countries().getData();
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    step1: "",
-    step2: "",
-    step3: "",
+    service: "",
+    question1: "",
+    question2: "",
+    question3: "",
     email: "",
     phone: "",
     country: "",
     name: "",
   });
 
-  const handleRadioChange = (e, step) => {
+  const handleRadioChange = (e, field) => {
     const { value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [step]: value,
+      [field]: value,
     }));
   };
 
@@ -66,12 +220,14 @@ const MultiStepForm = () => {
   const isValidStep = (step) => {
     switch (step) {
       case 1:
-        return formData.step1 !== "";
+        return formData.service !== "";
       case 2:
-        return formData.step2 !== "";
+        return formData.question1 !== "";
       case 3:
-        return formData.step3 !== "";
+        return formData.question2 !== "";
       case 4:
+        return formData.question3 !== "";
+      case 5:
         return (
           formData.email !== "" &&
           formData.phone !== "" &&
@@ -89,43 +245,29 @@ const MultiStepForm = () => {
         return (
           <div>
             <label className="block mb-2 text-blue-500">
-              Select options for Step 1:
+              Select a service:
             </label>
-            <div className="mb-4 flex flex-col sm:flex-row mt-12">
-              <div
-                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.step1 === "Option 1"
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, step1: "Option 1" })}
-              >
-                <input
-                  type="radio"
-                  value="Option 1"
-                  checked={formData.step1 === "Option 1"}
-                  onChange={(e) => handleRadioChange(e, "step1")}
-                  className="mr-2 bg-black"
-                />
-                Option 1
-              </div>
-              <div
-                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.step1 === "Option 2"
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, step1: "Option 2" })}
-              >
-                <input
-                  type="radio"
-                  value="Option 2"
-                  checked={formData.step1 === "Option 2"}
-                  onChange={(e) => handleRadioChange(e, "step1")}
-                  className="mr-2"
-                />
-                Option 2
-              </div>
+            <div className="mb-4 mt-12">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                    formData.service === service
+                      ? "bg-barActive border-black text-black"
+                      : "border-grey"
+                  }`}
+                  onClick={() => setFormData({ ...formData, service })}
+                >
+                  <input
+                    type="radio"
+                    value={service}
+                    checked={formData.service === service}
+                    onChange={(e) => handleRadioChange(e, "service")}
+                    className="mr-2"
+                  />
+                  {service}
+                </div>
+              ))}
             </div>
           </div>
         );
@@ -133,43 +275,31 @@ const MultiStepForm = () => {
         return (
           <div>
             <label className="block mb-2 text-blue-500">
-              Select options for Step 2:
+              {questions[formData.service][0].question}
             </label>
-            <div className="mb-4 flex flex-col sm:flex-row mt-12">
-              <div
-                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.step2 === "Option 1"
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, step2: "Option 1" })}
-              >
-                <input
-                  type="radio"
-                  value="Option 1"
-                  checked={formData.step2 === "Option 1"}
-                  onChange={(e) => handleRadioChange(e, "step2")}
-                  className="mr-2"
-                />
-                Option 1
-              </div>
-              <div
-                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.step2 === "Option 2"
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, step2: "Option 2" })}
-              >
-                <input
-                  type="radio"
-                  value="Option 2"
-                  checked={formData.step2 === "Option 2"}
-                  onChange={(e) => handleRadioChange(e, "step2")}
-                  className="mr-2"
-                />
-                Option 2
-              </div>
+            <div className="mb-4 mt-12">
+              {questions[formData.service][0].options.map((option, index) => (
+                <div
+                  key={index}
+                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                    formData.question1 === option
+                      ? "bg-barActive border-black text-black"
+                      : "border-grey"
+                  }`}
+                  onClick={() =>
+                    setFormData({ ...formData, question1: option })
+                  }
+                >
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={formData.question1 === option}
+                    onChange={(e) => handleRadioChange(e, "question1")}
+                    className="mr-2"
+                  />
+                  {option}
+                </div>
+              ))}
             </div>
           </div>
         );
@@ -177,47 +307,67 @@ const MultiStepForm = () => {
         return (
           <div>
             <label className="block mb-2 text-blue-500">
-              Select options for Step 3:
+              {questions[formData.service][1].question}
             </label>
-            <div className="mb-4 flex flex-col sm:flex-row mt-12">
-              <div
-                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.step3 === "Option 1"
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, step3: "Option 1" })}
-              >
-                <input
-                  type="radio"
-                  value="Option 1"
-                  checked={formData.step3 === "Option 1"}
-                  onChange={(e) => handleRadioChange(e, "step3")}
-                  className="mr-2"
-                />
-                Option 1
-              </div>
-              <div
-                className={`flex w-full md:mx-4 items-center mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.step3 === "Option 2"
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, step3: "Option 2" })}
-              >
-                <input
-                  type="radio"
-                  value="Option 2"
-                  checked={formData.step3 === "Option 2"}
-                  onChange={(e) => handleRadioChange(e, "step3")}
-                  className="mr-2"
-                />
-                Option 2
-              </div>
+            <div className="mb-4 mt-12">
+              {questions[formData.service][1].options.map((option, index) => (
+                <div
+                  key={index}
+                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                    formData.question2 === option
+                      ? "bg-barActive border-black text-black"
+                      : "border-grey"
+                  }`}
+                  onClick={() =>
+                    setFormData({ ...formData, question2: option })
+                  }
+                >
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={formData.question2 === option}
+                    onChange={(e) => handleRadioChange(e, "question2")}
+                    className="mr-2"
+                  />
+                  {option}
+                </div>
+              ))}
             </div>
           </div>
         );
       case 4:
+        return (
+          <div>
+            <label className="block mb-2 text-blue-500">
+              {questions[formData.service][2].question}
+            </label>
+            <div className="mb-4 mt-12">
+              {questions[formData.service][2].options.map((option, index) => (
+                <div
+                  key={index}
+                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                    formData.question3 === option
+                      ? "bg-barActive border-black text-black"
+                      : "border-grey"
+                  }`}
+                  onClick={() =>
+                    setFormData({ ...formData, question3: option })
+                  }
+                >
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={formData.question3 === option}
+                    onChange={(e) => handleRadioChange(e, "question3")}
+                    className="mr-2"
+                  />
+                  {option}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      case 5:
         return (
           <div>
             <label className="block mb-2 text-blue-500">Name:</label>
@@ -267,13 +417,13 @@ const MultiStepForm = () => {
   return (
     <div className="pb-44 pt-12 flex items-center justify-center bg-black">
       <div className="w-[70%] pb-6 bg-white p-8 rounded-xl shadow-lg relative transition-transform duration-500">
-        <h2 className="text-2xl font-bold mb-6">Telt</h2>
+        <h2 className="text-2xl font-bold mb-6">Multi-step Form</h2>
         <div className="relative pt-1 mb-4">
           <div className="flex mb-2 items-center justify-between">
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-barColor">
               <div
                 className="bg-black h-2.5 rounded-full transition-all duration-500"
-                style={{ width: `${(currentStep / steps.length) * 100}%` }}
+                style={{ width: `${(currentStep / 5) * 100}%` }}
               ></div>
             </div>
           </div>
@@ -292,16 +442,16 @@ const MultiStepForm = () => {
                 Back
               </button>
             )}
-            {currentStep < 4 && (
+            {currentStep < 5 && (
               <button
                 type="button"
                 onClick={handleNext}
-                className="bg-[#2a2a2a] text-white px-4 py-2 rounded "
+                className="bg-[#2a2a2a] text-white px-4 py-2 rounded ml-4"
               >
                 Next
               </button>
             )}
-            {currentStep === 4 && (
+            {currentStep === 5 && (
               <button
                 type="submit"
                 className="bg-[#2a2a2a] text-white px-4 py-2 rounded ml-4"
