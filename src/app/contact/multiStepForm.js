@@ -433,7 +433,7 @@ const MultiStepForm = () => {
           <div className={`step-content transition-transform duration-500`}>
             {renderStepContent()}
           </div>
-          <div className="flex justify-between mt-12 bottom-0 left-0 w-full p-8">
+          <div className="flex justify-between mt-2 bottom-0 left-0 w-full p-8">
             {currentStep > 1 && (
               <button
                 type="button"
@@ -447,7 +447,7 @@ const MultiStepForm = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="bg-[#2a2a2a] text-white px-4 py-2 rounded ml-4"
+                className="bg-[#2a2a2a] text-white px-4 py-2 rounded "
               >
                 Next
               </button>
