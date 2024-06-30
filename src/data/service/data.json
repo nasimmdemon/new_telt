@@ -1,41 +1,5 @@
 [
   {
-    "id": "1",
-    "icon": "google-logo",
-    "title": "Managed IT Services",
-    "desc": "Outsourcing IT management and maintenance, including network monitoring, data backup, cybersecurity, help desk support."
-  },
-  {
-    "id": "2",
-    "icon": "icon-user-sync",
-    "title": "IT Consulting",
-    "desc": "Strategic guidance on IT strategy, digital transformation, software implementation, and project management."
-  },
-  {
-    "id": "3",
-    "icon": "icon-device-cloud",
-    "title": "Cloud Computing",
-    "desc": "Access to remote servers and infrastructure for data storage, application hosting, and scalable resources."
-  },
-  {
-    "id": "4",
-    "icon": "icon-cloud-dots",
-    "title": "Cybersecurity Solutions",
-    "desc": "Protecting businesses from cyber threats through measures like network security, encryption, and training."
-  },
-  {
-    "id": "5",
-    "icon": "icon-phone-cloud",
-    "title": "Data Analytics",
-    "desc": "Services for data storage, backup, integration, governance, and analytics to drive insights and informed decisions."
-  },
-  {
-    "id": "6",
-    "icon": "icon-device-sync",
-    "title": "Software Development",
-    "desc": "Custom software development and integration services to meet specific business needs."
-  },
-  {
     "id": "7",
     "icon": "cards",
     "title": "SEO",

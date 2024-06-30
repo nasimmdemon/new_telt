@@ -120,9 +120,8 @@ export default function FooterOne({ classname }) {
                           className={`caption1 hover-underline ${
                             classname && "underline-white"
                           }`}
-                          href={process.env.PUBLIC_URL + "/services/[slug]"}
+                          href={"/services/[slug]"}
                           as={
-                            process.env.PUBLIC_URL +
                             "/services/" +
                             convertToSlug(item.title) +
                             "?id=" +
@@ -139,7 +138,7 @@ export default function FooterOne({ classname }) {
             </div>
             <div className="xl:w-1/4 w-full">
               <div className="company-contact max-xl:w-1/2 max-sm:w-full">
-                <div className="heading text-button">Newsletter</div>
+                <div className="heading text-button">Nyheter</div>
                 <div className="send-block mt-4 flex items-center w-full relative">
                   <Icon.Envelope className="text-lg absolute top-1/2 left-0 -translate-y-1/2" />
                   <input
@@ -149,7 +148,7 @@ export default function FooterOne({ classname }) {
                         : "border-black"
                     }`}
                     type="text"
-                    placeholder="Your email address"
+                    placeholder="Fyll i din email"
                   />
                   <button className="absolute right-0 top-1/2 -translate-y-1/2">
                     <Icon.PaperPlaneTilt className="text-2xl" />
@@ -221,7 +220,7 @@ export default function FooterOne({ classname }) {
             <div className="flex items-center sm:justify-between max-sm:flex-col gap-y-2 justify-center py-2 border-t border-outline">
               <div className="left-block flex items-center">
                 <div className="copy-right text-surface1 caption1">
-                  ©2023 ByteWave. All Rights Reserved.
+                  ©2024 Telt. All Rights Reserved.
                 </div>
               </div>
               <div className="nav-link flex items-center gap-2.5">
@@ -229,21 +228,21 @@ export default function FooterOne({ classname }) {
                   className="text-surface1 caption1 hover-underline"
                   href="#!"
                 >
-                  Terms Of Services
+                  Användarvillkor
                 </Link>
                 <span className="text-surface1 caption1">|</span>
                 <Link
                   className="text-surface1 caption1 hover-underline"
                   href="#!"
                 >
-                  Privacy Policy
+                  Integritetspolicy
                 </Link>
                 <span className="text-surface1 caption1">|</span>
                 <Link
                   className="text-surface1 caption1 hover-underline"
                   href="#!"
                 >
-                  Cookie Policy
+                  Cookiepolicy
                 </Link>
               </div>
             </div>

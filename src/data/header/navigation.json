@@ -5,15 +5,15 @@
   },
 
   {
-    "title": "Blog",
+    "title": "Artiklar",
     "to": "/blog"
   },
   {
-    "title": "About Us",
+    "title": "Lite kort om Telt.",
     "to": "/about-us"
   },
   {
-    "title": "Contact Us",
+    "title": "Kontakta oss",
     "to": "/pages/contact-us"
   }
 ]

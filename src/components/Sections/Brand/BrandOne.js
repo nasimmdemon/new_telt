@@ -21,7 +21,7 @@ export default function BrandOne({ classname }) {
     <section className={`section-brand ${classname}`}>
       <div className="container">
         <h5 className="heading5 text-center">
-          Trusted by specialists all around the world
+          Förtroende från kunder över hela världen
         </h5>
       </div>
     </section>

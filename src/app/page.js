@@ -18,8 +18,8 @@ export default function Home() {
         <ServiceOne data={serviceData} start={6} limit={16} />
 
         <CustomAbout
-          subHeading="This is the subheading"
-          title="This is the title"
+          subHeading="Varför TELT?"
+          title="Effekten av TELT"
           description="Vi bygger allt efter dina behov och hjälper dig med marknadsföringen. Få skräddarsydda mjukvarulösningar och expertstöd."
           url="/contact"
           buttonTitle="This is the button title"
@@ -29,11 +29,11 @@ export default function Home() {
 
         <TestimonialOne data={testimonialData} />
         <CustomAbout
-          subHeading="This is the subheading"
-          title="This is the title"
-          description="Vi bygger allt efter dina behov och hjälper dig med marknadsföringen. Få skräddarsydda mjukvarulösningar och expertstöd."
+          subHeading="Hur går vi tillväga?"
+          title="Våra kunder anser att vi producerar konst"
+          description="Processen börjar med att vi samlar in information från ditt offertformulär. Därefter presenterar vi ett uppskattat prisförslag. När du godkänt förslaget påbörjar vi arbetet."
           url="/contact"
-          buttonTitle="This is the button title"
+          buttonTitle="Läs mer om hur vi arbetar med dig"
           bg="bg-gradient-to-r from-pink to-yellow mb-12 shadow"
         />
         <ContactOne classname={"bg-linear-blue"} />

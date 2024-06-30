@@ -41,12 +41,12 @@ const AboutOne = (props) => {
               <div className="body1 mt-1 text-white">Projekt slutförda</div>
             </div>
             <div className="counter-item px-5 border-l border-white">
-              <div className="count-number heading3 text-white">460</div>
-              <div className="body1 mt-1 text-white">Project completed</div>
+              <div className="count-number heading3 text-white">100%</div>
+              <div className="body1 mt-1 text-white">Kvalitet</div>
             </div>
             <div className="counter-item px-5 border-l border-white">
-              <div className="count-number heading3 text-white">15</div>
-              <div className="body1 mt-1 text-white">Awards achievement</div>
+              <div className="count-number heading3 text-white">4</div>
+              <div className="body1 mt-1 text-white">Olika länder</div>
             </div>
           </div>
         </div>

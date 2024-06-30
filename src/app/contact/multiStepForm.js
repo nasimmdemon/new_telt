@@ -16,35 +16,36 @@ const steps = [
 
 const services = [
   "SEO",
-  "Sociala medier",
-  "En webbshop",
-  "Hjälp med en befintlig webbplats eller blogg",
+  "Hemsida",
   "Konverteringsökning",
+  "Sociala medier",
+  "Hjälp med befintlig webbplats eller blogg",
   "Vet ej",
 ];
 
 const questions = {
   SEO: [
     {
-      question: "What is your primary goal with SEO?",
+      question: "Vad gäller SEO arbetet för?",
+      options: ["Hemsida", "Blogg", "E-handel"],
+    },
+    {
+      question: "Vilka är dina huvudsakliga SEO-mål?",
       options: [
-        "Increase organic traffic",
-        "Improve search engine ranking",
-        "Generate leads",
-        "Enhance brand awareness",
+        "Ökning av backlinks",
+        "Öka konverteringar",
+        "Förbättring av meta-tags",
+        "Förbättring av innehåll på webben",
       ],
     },
     {
-      question: "Which SEO services are you interested in?",
-      options: ["On-page SEO", "Off-page SEO", "Technical SEO", "SEO Audit"],
-    },
-    {
-      question: "Do you have a specific target audience for SEO?",
+      question: "Vad är din budget för SEO-tjänster?",
       options: [
-        "Local audience",
-        "National audience",
-        "International audience",
-        "Not sure",
+        "Under 10 000 SEK",
+        "10 000 - 50 000 SEK",
+        "50 000 - 100 000 SEK",
+        "Över 100 000 SEK",
+        "Vet ej",
       ],
     },
   ],
@@ -245,7 +246,7 @@ const MultiStepForm = () => {
         return (
           <div>
             <label className="block mb-2 text-blue-500">
-              Select a service:
+              Vi börjar. Vad behöver du hjälp med?
             </label>
             <div className="mb-4 mt-12">
               {services.map((service, index) => (
