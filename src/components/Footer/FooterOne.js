@@ -12,10 +12,10 @@ export default function FooterOne({ classname }) {
           <div className="flex justify-between gap-y-8 max-xl:flex-wrap">
             <div className="xl:w-1/4 md:w-1/2">
               <div className="footer-company-infor flex flex-col gap-5">
-                <Link href="/" className="logo">
+                <Link href="/" className="logo ml-[-34px]">
                   {classname ? (
                     <Image
-                      src={"/images/logo-white.svg"}
+                      src={"/images/logo-black.png"}
                       width={5000}
                       height={5000}
                       alt="logo"
@@ -23,7 +23,7 @@ export default function FooterOne({ classname }) {
                     />
                   ) : (
                     <Image
-                      src={"/images/logo.svg"}
+                      src={"/images/logo_black.png"}
                       width={5000}
                       height={5000}
                       alt="logo"
@@ -32,29 +32,31 @@ export default function FooterOne({ classname }) {
                   )}
                 </Link>
                 <div className="caption1">
-                  Welcome to Bytewave! We provide diverse IT solutions with a
-                  team of experts. From IT management to cloud solutions, we
-                  have you covered.{" "}
+                  På TELT har vi drivit automatisering och digitalisering över
+                  flera branscher genom tjänster som webbproduktion,
+                  onlinestrategier, marknadsföring och grafisk design. Kontakta
+                  oss för att ta det första steget mot en lönsam lösning för
+                  ditt företag.{" "}
                 </div>
                 <div className="caption1">
-                  Mon - Fri: 9:00 - 19:00 <br />
-                  Closed on Weekends
+                  Mån - Fre: 09:00 - 20:00 <br />
+                  Stängt på helgerna
                 </div>
               </div>
             </div>
             <div className="w-full md:w-1/2">
               <div className="footer-navigate flex md:justify-evenly max-md:gap-20 max-sm:gap-y-6 max-sm:flex-wrap">
                 <div className="footer-nav-item">
-                  <div className="item-heading text-button">Company</div>
+                  <div className="item-heading text-button">Verksamhet</div>
                   <ul className="list-nav mt-3">
                     <li className="mt-2">
                       <Link
                         className={`caption1 hover-underline ${
                           classname && "underline-white"
                         }`}
-                        href="/company/about-us"
+                        href="/about-us"
                       >
-                        About us
+                        Om oss
                       </Link>
                     </li>
                     <li className="mt-2">
@@ -64,7 +66,7 @@ export default function FooterOne({ classname }) {
                         }`}
                         href="/company/our-teams"
                       >
-                        Our Team
+                        Vårt team
                       </Link>
                     </li>
                     <li className="mt-2">
@@ -74,7 +76,7 @@ export default function FooterOne({ classname }) {
                         }`}
                         href="/company/testimonials"
                       >
-                        Review
+                        Vårt omdöme
                       </Link>
                     </li>
                     <li className="mt-2">
@@ -84,7 +86,7 @@ export default function FooterOne({ classname }) {
                         }`}
                         href="/blog/blog-grid"
                       >
-                        Blog
+                        Nyheter
                       </Link>
                     </li>
                     <li className="mt-2">
@@ -94,7 +96,7 @@ export default function FooterOne({ classname }) {
                         }`}
                         href="/case-studies/case-studies-one"
                       >
-                        Case Studies
+                        Portfölj
                       </Link>
                     </li>
                     <li className="mt-2">
@@ -102,15 +104,15 @@ export default function FooterOne({ classname }) {
                         className={`caption1 hover-underline ${
                           classname && "underline-white"
                         }`}
-                        href="/pages/contact-us"
+                        href="/contact"
                       >
-                        Contact
+                        Kontakt
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="footer-nav-item">
-                  <div className="item-heading text-button">Solutions</div>
+                  <div className="item-heading text-button">IT-tjänster</div>
                   <ul className="list-nav mt-3">
                     {serviceData.slice(0, 6).map((item) => (
                       <li className="mt-2" key={item.id}>
