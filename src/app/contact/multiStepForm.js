@@ -2,8 +2,6 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Select from "react-select";
-import countries from "react-select-country-list";
 import Styles from "./multiStepForm.module.css";
 
 const steps = [
@@ -49,136 +47,144 @@ const questions = {
       ],
     },
   ],
-  "Sociala medier": [
+  Hemsida: [
     {
-      question: "What social media platforms do you use?",
-      options: ["Facebook", "Instagram", "Twitter", "LinkedIn"],
+      question: "Vart vill du ha din plattform?",
+      options: ["Next JS", "Php", "WordPress", "Shopify", "Wix"],
     },
     {
-      question: "What type of content do you want to create?",
-      options: ["Images", "Videos", "Blog posts", "Infographics"],
-    },
-    {
-      question: "What is your primary goal with social media?",
+      question: "Vad är syftet med din webbplats?",
       options: [
-        "Increase followers",
-        "Engage with audience",
-        "Promote products/services",
-        "Drive website traffic",
+        "E-handel",
+        "Blogg",
+        "Företagspresentation",
+        "Portfölj",
+        "Annat",
+      ],
+    },
+    {
+      question: "Vilka funktioner vill du inkludera på din webbplats?",
+      options: [
+        "Blogg",
+        "Bokningssystem",
+        "Kontaktformulär",
+        "E-handel funktioner",
+        "Användarrecensioner",
+        "Nyhetsbrev registrering",
+        "Annat",
       ],
     },
   ],
-  "En webbshop": [
-    {
-      question: "What type of products do you sell?",
-      options: [
-        "Physical goods",
-        "Digital products",
-        "Services",
-        "Subscriptions",
-      ],
-    },
-    {
-      question: "Which e-commerce platform do you use?",
-      options: ["Shopify", "WooCommerce", "Magento", "Other"],
-    },
-    {
-      question: "What features are you looking for in a web shop?",
-      options: [
-        "Responsive design",
-        "Secure payment gateway",
-        "User-friendly interface",
-        "SEO-friendly",
-      ],
-    },
-  ],
-  "Hjälp med en befintlig webbplats eller blogg": [
-    {
-      question: "What issues are you facing with your current website?",
-      options: [
-        "Slow loading speed",
-        "Poor design",
-        "Low traffic",
-        "Technical issues",
-      ],
-    },
-    {
-      question: "What improvements do you want to make?",
-      options: [
-        "Redesign website",
-        "Improve SEO",
-        "Add new features",
-        "Fix bugs",
-      ],
-    },
-    {
-      question: "Do you need ongoing maintenance?",
-      options: ["Yes", "No", "Maybe", "Not sure"],
-    },
-  ],
+
   Konverteringsökning: [
     {
-      question: "What is your current conversion rate?",
-      options: ["Less than 1%", "1-3%", "3-5%", "More than 5%"],
+      question: "Vart har du din plattform?",
+      options: ["Wordpress", "Visual studio", "Shopify", "Wix", "Editor X"],
     },
     {
-      question: "What conversion goals do you have?",
+      question: "Vad säljer du?",
+      options: ["Tobak & CBD/Hampa", "Materiella varor", "Tjänster"],
+    },
+    {
+      question: "Vad har du för konvertering i månaden?",
+      options: ["<10%", "10 - 20%", "20 - 40%"],
+    },
+    {
+      question: "Vad är din budget?",
       options: [
-        "Increase sales",
-        "Generate leads",
-        "Increase sign-ups",
-        "Improve engagement",
+        "Under 10 000 SEK",
+        "10 000 - 50 000 SEK",
+        "50 000 - 100 000 SEK",
+        "Över 100 000 SEK",
+        "Vet ej",
+      ],
+    },
+  ],
+  "Sociala medier": [
+    {
+      question: "Vad gäller det för media?",
+      options: ["Instagram", "Facebook", "TikTok", "Snapchat", "Flashback"],
+    },
+    {
+      question: "Hur ofta vill du marknadsföra dig i månaden?",
+      options: ["4 gånger", "6 gånger", "12 gånger", "16 gånger"],
+    },
+    {
+      question: "Ska vi designa annonsernas bilder?",
+      options: ["Ja", "Nej"],
+    },
+    {
+      question: "Vilken typ av innehåll vill du marknadsföra?",
+      options: ["Produkter", "Tjänster", "Blogginlägg", "Event", "Annat"],
+    },
+  ],
+  "Hjälp med befintlig webbplats eller blogg": [
+    {
+      question: "Vilken plattform använder du för din nuvarande webbplats?",
+      options: ["JavaScript", "Next JS", "WordPress", "Shopify", "Wix"],
+    },
+    {
+      question: "Vad är syftet med din webbplats?",
+      options: [
+        "E-handel",
+        "Blogg",
+        "Företagspresentation",
+        "Portfölj",
+        "Annat",
       ],
     },
     {
-      question:
-        "What conversion optimization techniques are you interested in?",
+      question: "Vilka områden behöver du hjälp med?",
       options: [
-        "A/B testing",
-        "Landing page optimization",
-        "User experience improvement",
-        "Personalization",
+        "Design och layout",
+        "Funktionalitet och funktioner",
+        "Innehållsskapande",
+        "SEO och marknadsföring",
+        "Hastighetsoptimering",
+        "Säkerhet",
+        "Annat",
       ],
+    },
+    {
+      question: "Vill du ha hjälp med SEO för din webbplats?",
+      options: ["Ja", "Nej"],
+    },
+    {
+      question: "Hur många backlinks önskar du i månaden?",
+      options: ["10", "50", "200+"],
     },
   ],
   "Vet ej": [
     {
-      question: "What business goals are you looking to achieve?",
+      question: "Vilken plattform använder du för sponsrade ads?",
+      options: ["Google", "Instagram", "Facebook", "TikTok", "Twitter"],
+    },
+    {
+      question: "Hur ofta marknadsför du dig idag?",
       options: [
-        "Increase brand awareness",
-        "Generate more leads",
-        "Boost sales",
-        "Improve customer engagement",
+        "En gång i månaden",
+        "En gång i veckan",
+        "Flera gånger i veckan",
       ],
     },
     {
-      question: "Which areas do you think need improvement?",
-      options: [
-        "Website design",
-        "SEO",
-        "Social media presence",
-        "Conversion rates",
-      ],
+      question: "Behöver du hjälp med design för marknadsföring?",
+      options: ["Ja", "Nej"],
     },
     {
-      question: "Would you like a consultation to discuss your needs?",
-      options: ["Yes", "No", "Maybe", "Not sure"],
+      question: "Gäller det sponsrade videos eller bilder?",
+      options: ["Ja", "Nej"],
     },
   ],
 };
-
-const countryOptions = countries().getData();
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     service: "",
-    question1: "",
-    question2: "",
-    question3: "",
+    questions: {},
     email: "",
     phone: "",
-    country: "",
     name: "",
   });
 
@@ -186,7 +192,10 @@ const MultiStepForm = () => {
     const { value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [field]: value,
+      questions: {
+        ...prevFormData.questions,
+        [field]: value,
+      },
     }));
   };
 
@@ -197,10 +206,6 @@ const MultiStepForm = () => {
 
   const handlePhoneChange = (value) => {
     setFormData({ ...formData, phone: value });
-  };
-
-  const handleCountryChange = (selectedOption) => {
-    setFormData({ ...formData, country: selectedOption.label });
   };
 
   const handleNext = () => {
@@ -219,200 +224,132 @@ const MultiStepForm = () => {
   };
 
   const isValidStep = (step) => {
-    switch (step) {
-      case 1:
-        return formData.service !== "";
-      case 2:
-        return formData.question1 !== "";
-      case 3:
-        return formData.question2 !== "";
-      case 4:
-        return formData.question3 !== "";
-      case 5:
-        return (
-          formData.email !== "" &&
-          formData.phone !== "" &&
-          formData.country !== "" &&
-          formData.name !== ""
-        );
-      default:
-        return false;
+    if (step === 1) return formData.service !== "";
+    if (step > 1 && step <= questions[formData.service]?.length + 1) {
+      return (
+        formData.questions[questions[formData.service][step - 2].question] !==
+        undefined
+      );
     }
+    if (step === questions[formData.service]?.length + 2) {
+      return (
+        formData.email !== "" && formData.phone !== "" && formData.name !== ""
+      );
+    }
+    return false;
   };
 
   const renderStepContent = () => {
-    switch (currentStep) {
-      case 1:
-        return (
-          <div>
-            <label className="block mb-2 text-blue-500">
-              Vi börjar. Vad behöver du hjälp med?
-            </label>
-            <div className="mb-4 mt-12">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                    formData.service === service
-                      ? "bg-barActive border-black text-black"
-                      : "border-grey"
-                  }`}
-                  onClick={() => setFormData({ ...formData, service })}
-                >
-                  <input
-                    type="radio"
-                    value={service}
-                    checked={formData.service === service}
-                    onChange={(e) => handleRadioChange(e, "service")}
-                    className="mr-2"
-                  />
-                  {service}
-                </div>
-              ))}
-            </div>
+    if (currentStep === 1) {
+      return (
+        <div>
+          <label className="block mb-2 text-blue-500">
+            Vi börjar. Vad behöver du hjälp med?
+          </label>
+          <div className="mb-4 mt-12">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                  formData.service === service
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
+                }`}
+                onClick={() => setFormData({ ...formData, service })}
+              >
+                <input
+                  type="radio"
+                  value={service}
+                  checked={formData.service === service}
+                  onChange={(e) => handleRadioChange(e, "service")}
+                  className="mr-2"
+                />
+                {service}
+              </div>
+            ))}
           </div>
-        );
-      case 2:
-        return (
-          <div>
-            <label className="block mb-2 text-blue-500">
-              {questions[formData.service][0].question}
-            </label>
-            <div className="mb-4 mt-12">
-              {questions[formData.service][0].options.map((option, index) => (
-                <div
-                  key={index}
-                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                    formData.question1 === option
-                      ? "bg-barActive border-black text-black"
-                      : "border-grey"
-                  }`}
-                  onClick={() =>
-                    setFormData({ ...formData, question1: option })
-                  }
-                >
-                  <input
-                    type="radio"
-                    value={option}
-                    checked={formData.question1 === option}
-                    onChange={(e) => handleRadioChange(e, "question1")}
-                    className="mr-2"
-                  />
-                  {option}
-                </div>
-              ))}
-            </div>
+        </div>
+      );
+    } else if (
+      currentStep > 1 &&
+      currentStep <= questions[formData.service]?.length + 1
+    ) {
+      const questionIndex = currentStep - 2;
+      const question = questions[formData.service][questionIndex].question;
+      const options = questions[formData.service][questionIndex].options;
+
+      return (
+        <div>
+          <label className="block mb-2 text-blue-500">{question}</label>
+          <div className="mb-4 mt-12">
+            {options.map((option, index) => (
+              <div
+                key={index}
+                className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                  formData.questions[question] === option
+                    ? "bg-barActive border-black text-black"
+                    : "border-grey"
+                }`}
+                onClick={() =>
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    questions: {
+                      ...prevFormData.questions,
+                      [question]: option,
+                    },
+                  }))
+                }
+              >
+                <input
+                  type="radio"
+                  value={option}
+                  checked={formData.questions[question] === option}
+                  onChange={(e) => handleRadioChange(e, question)}
+                  className="mr-2"
+                />
+                {option}
+              </div>
+            ))}
           </div>
-        );
-      case 3:
-        return (
-          <div>
-            <label className="block mb-2 text-blue-500">
-              {questions[formData.service][1].question}
-            </label>
-            <div className="mb-4 mt-12">
-              {questions[formData.service][1].options.map((option, index) => (
-                <div
-                  key={index}
-                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                    formData.question2 === option
-                      ? "bg-barActive border-black text-black"
-                      : "border-grey"
-                  }`}
-                  onClick={() =>
-                    setFormData({ ...formData, question2: option })
-                  }
-                >
-                  <input
-                    type="radio"
-                    value={option}
-                    checked={formData.question2 === option}
-                    onChange={(e) => handleRadioChange(e, "question2")}
-                    className="mr-2"
-                  />
-                  {option}
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      case 4:
-        return (
-          <div>
-            <label className="block mb-2 text-blue-500">
-              {questions[formData.service][2].question}
-            </label>
-            <div className="mb-4 mt-12">
-              {questions[formData.service][2].options.map((option, index) => (
-                <div
-                  key={index}
-                  className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                    formData.question3 === option
-                      ? "bg-barActive border-black text-black"
-                      : "border-grey"
-                  }`}
-                  onClick={() =>
-                    setFormData({ ...formData, question3: option })
-                  }
-                >
-                  <input
-                    type="radio"
-                    value={option}
-                    checked={formData.question3 === option}
-                    onChange={(e) => handleRadioChange(e, "question3")}
-                    className="mr-2"
-                  />
-                  {option}
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      case 5:
-        return (
-          <div>
-            <label className="block mb-2 text-blue-500">Name:</label>
-            <input
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded mb-4"
+        </div>
+      );
+    } else if (currentStep === questions[formData.service]?.length + 2) {
+      return (
+        <div>
+          <label className="block mb-2 text-blue-500">Namn:</label>
+          <input
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded mb-4"
+            required
+          />
+          <label className="block mb-2 text-blue-500">E-post:</label>
+          <input
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded mb-4"
+            required
+          />
+          <label className="block mb-2 text-blue-500">Telefonnummer:</label>
+          <div className="w-[100%]">
+            <PhoneInput
+              country={"us"}
+              value={formData.phone}
+              onChange={handlePhoneChange}
+              containerClass="mb-4"
+              inputClass="w-[100%] p-2 border border-gray rounded"
               required
-            />
-            <label className="block mb-2 text-blue-500">Email Address:</label>
-            <input
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded mb-4"
-              required
-            />
-            <label className="block mb-2 text-blue-500">Phone Number:</label>
-            <div className="w-[100%]">
-              <PhoneInput
-                country={"us"}
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                containerClass="mb-4"
-                inputClass="w-[100%] p-2 border border-gray rounded"
-                required
-                className={Styles.phoneInput}
-              />
-            </div>
-            <label className="block mb-2 text-blue-500">Select Country:</label>
-            <Select
-              options={countryOptions}
-              onChange={handleCountryChange}
-              className="mb-4"
-              required
+              className={Styles.phoneInput}
             />
           </div>
-        );
-      default:
-        return null;
+        </div>
+      );
     }
+    return null;
   };
 
   return (
@@ -425,7 +362,12 @@ const MultiStepForm = () => {
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-barColor">
               <div
                 className="bg-black h-2.5 rounded-full transition-all duration-500"
-                style={{ width: `${(currentStep / 5) * 100}%` }}
+                style={{
+                  width: `${
+                    (currentStep / (questions[formData.service]?.length + 2)) *
+                    100
+                  }%`,
+                }}
               ></div>
             </div>
           </div>
@@ -444,7 +386,7 @@ const MultiStepForm = () => {
                 Back
               </button>
             )}
-            {currentStep < 5 && (
+            {currentStep < questions[formData.service]?.length + 2 && (
               <button
                 type="button"
                 onClick={handleNext}
@@ -453,7 +395,7 @@ const MultiStepForm = () => {
                 Next
               </button>
             )}
-            {currentStep === 5 && (
+            {currentStep === questions[formData.service]?.length + 2 && (
               <button
                 type="submit"
                 className="bg-[#2a2a2a] text-white px-4 py-2 rounded ml-4"
