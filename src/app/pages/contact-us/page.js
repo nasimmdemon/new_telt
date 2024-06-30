@@ -35,13 +35,13 @@ export default function ContactUs() {
               <div className="infor">
                 <div className="heading">
                   <div className="tag caption1 font-bold uppercase">
-                    Contact Us
+                    Kontakta oss
                   </div>
-                  <h2 className="heading2 mt-4">We’d love to help</h2>
+                  <h2 className="heading2 mt-4">Vi finns & hör dig!</h2>
                   <p className="body2 mt-4">
-                    Enabled a startup to launch a successful mobile app by
-                    providing end-to-end development, leading to high downloads
-                    and recognition.
+                    Är du redo att förverkliga din idé? Kontakta oss idag för
+                    att utforska hur vi kan omvandla din vision från tanke till
+                    verklighet.
                   </p>
                 </div>
                 <div className="list-social flex items-center gap-5 mt-7">
@@ -87,7 +87,7 @@ export default function ContactUs() {
                       <Icon.Phone weight="bold" className="text-xl" />
                     </div>
                     <div className="text h-full flex-1 pl-6 border-l border-outline">
-                      <span className="body2">123 456 7890</span>
+                      <span className="body2">010 585 30 01</span>
                     </div>
                   </div>
                   <div className="item flex items-center gap-6 mt-5">
@@ -95,7 +95,7 @@ export default function ContactUs() {
                       <Icon.EnvelopeSimple weight="bold" className="text-xl" />
                     </div>
                     <div className="text h-full flex-1 pl-6 border-l border-outline">
-                      <span className="body2">hi.avitex@gmail.com</span>
+                      <span className="body2">Info@telt.se</span>
                     </div>
                   </div>
                   <div className="item flex items-center gap-6 mt-5">
@@ -103,9 +103,7 @@ export default function ContactUs() {
                       <Icon.MapPin weight="bold" className="text-xl" />
                     </div>
                     <div className="text h-full flex-1 pl-6 border-l border-outline">
-                      <span className="body2">
-                        4140 Rd. Allentown, New Mexico 31134
-                      </span>
+                      <span className="body2">BOX 2361, 116 74 Stockholm</span>
                     </div>
                   </div>
                 </div>
@@ -168,41 +166,40 @@ export default function ContactUs() {
       </section>
       <section className="our-location lg:py-20 sm:py-14 py-10 border-b border-outline">
         <div className="container">
-          <h3 className="heading3 text-center">Our Locations</h3>
-          <p className="body2 text-surface1 text-center mt-4">
-            Tracing the Path of Our Legacy and Growth
-          </p>
+          <h3 className="heading3 text-center">Våra platser</h3>
+          <p className="body2 text-surface1 text-center mt-4">Våra platser</p>
           <div className="grid xl:grid-cols-4 sm:grid-cols-2 gap-8 lg:mt-10 mt-7">
             <div className="content-infor flex flex-col bg-linear p-8 rounded-3xl h-full">
-              <h5 className="heading5">Wasington DC</h5>
-              <span className="body2 text-surface1 mt-5">Address:</span>
+              <h5 className="heading5">Sweden</h5>
+              <span className="body2 text-surface1 mt-5">Adress:</span>
               <strong className="text-title mt-1">
-                2972 Westheimer Rd. Santa Ana, Illinois 85486
+                BOX 2361, 116 74 Stockholm
               </strong>
-              <span className="body2 text-surface1 mt-5">Phone Number:</span>
-              <strong className="text-title mt-1">(252) 555-0126</strong>
+              <span className="body2 text-surface1 mt-5">Telefon:</span>
+              <strong className="text-title mt-1">010 585 30 01</strong>
               <Link
                 className="caption1 font-bold mt-5"
                 href="https://www.google.com/maps"
                 target="_blank"
               >
-                View On Map
+                Visa På Kartan
               </Link>
             </div>
             <div className="content-infor flex flex-col bg-linear p-8 rounded-3xl h-full">
-              <h5 className="heading5">NewYork</h5>
-              <span className="body2 text-surface1 mt-5">Address:</span>
+              <h5 className="heading5">Malta</h5>
+              <span className="body2 text-surface1 mt-5">Adress:</span>
               <strong className="text-title mt-1">
-                2118 Cir. Syracuse, Connecticut 35624
+                18; Block 19 Vincenti Bld, Strait Street, VLT 1432, Valletta,
+                MALTA​
               </strong>
-              <span className="body2 text-surface1 mt-5">Phone Number:</span>
-              <strong className="text-title mt-1">(684) 555-0102</strong>
+              <span className="body2 text-surface1 mt-5">Telefon:</span>
+              <strong className="text-title mt-1">010 585 30 01</strong>
               <Link
                 className="caption1 font-bold mt-5"
                 href="https://www.google.com/maps"
                 target="_blank"
               >
-                View On Map
+                Visa På Kartan
               </Link>
             </div>
             <div className="content-infor flex flex-col bg-linear p-8 rounded-3xl h-full">
@@ -218,23 +215,23 @@ export default function ContactUs() {
                 href="https://www.google.com/maps"
                 target="_blank"
               >
-                View On Map
+                View on map
               </Link>
             </div>
             <div className="content-infor flex flex-col bg-linear p-8 rounded-3xl h-full">
-              <h5 className="heading5">Morocco</h5>
-              <span className="body2 text-surface1 mt-5">Address:</span>
+              <h5 className="heading5">Italy</h5>
+              <span className="body2 text-surface1 mt-5">Adress:</span>
               <strong className="text-title mt-1">
-                1901 Thornridge Cir. Shiloh, Hawaii 81063
+                Via Tommaso Fazello Aci Castello, Catania
               </strong>
-              <span className="body2 text-surface1 mt-5">Phone Number:</span>
-              <strong className="text-title mt-1">(480) 555-0103</strong>
+              <span className="body2 text-surface1 mt-5">Telefon:</span>
+              <strong className="text-title mt-1">010 585 30 01</strong>
               <Link
                 className="caption1 font-bold mt-5"
                 href="https://www.google.com/maps"
                 target="_blank"
               >
-                View On Map
+                Visa På Kartan
               </Link>
             </div>
           </div>
