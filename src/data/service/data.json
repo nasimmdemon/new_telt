@@ -1,36 +1,36 @@
 [
   {
-    "id": "7",
+    "id": "1",
     "icon": "cards",
     "title": "SEO",
     "desc": "Outsourcing IT management and maintenance, including network monitoring, data backup, cybersecurity, help desk support."
   },
   {
-    "id": "8",
+    "id": "2",
     "icon": "Rocket",
     "title": "Sociala medier",
     "desc": "Strategic guidance on IT strategy, digital transformation, software implementation, and project management."
   },
   {
-    "id": "9",
+    "id": "3",
     "icon": "FirstAidKit",
     "title": "En webbshop",
     "desc": "Access to remote servers and infrastructure for data storage, application hosting, and scalable resources."
   },
   {
-    "id": "10",
+    "id": "4",
     "icon": "AirplaneTakeoff",
     "title": "Hjälp med en befintlig webbplats eller blogg",
     "desc": "Protecting businesses from cyber threats through measures like network security, encryption, and training."
   },
   {
-    "id": "11",
+    "id": "5",
     "icon": "Warehouse",
     "title": "Konverteringsökning",
     "desc": "Services for data storage, backup, integration, governance, and analytics to drive insights and informed decisions."
   },
   {
-    "id": "12",
+    "id": "6",
     "icon": "Wrench",
     "title": "Vet ej",
     "desc": " Custom software development and integration services to meet specific business needs."

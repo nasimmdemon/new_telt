@@ -5,7 +5,7 @@ import { convertToSlug } from "@/common/utils";
 
 const ServiceOne = ({ data, start, limit }) => {
   return (
-    <section className="service-block lg:py-5 sm:py-4 py-2 ">
+    <section className="service-block lg:py-5 sm:py-4 py-2 mb-3">
       <div className="container">
         <div className="flex items-center justify-between w-full max-lg:flex-wrap gap-y-4">
           <div className="xl:w-2/3 lg:w-3/4 w-full">

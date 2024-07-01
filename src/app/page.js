@@ -15,7 +15,7 @@ export default function Home() {
       <LayoutOne className="-style-1">
         <SliderOne className="-style-1 lg:py-[60px] py-10" />
         <AboutOne bg="bg-linear-blue" />
-        <ServiceOne data={serviceData} start={6} limit={16} />
+        <ServiceOne data={serviceData} limit={16} />
 
         <CustomAbout
           subHeading="Varför TELT?"
