@@ -5,13 +5,13 @@ import "react-phone-input-2/lib/style.css";
 import Styles from "./multiStepForm.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faGoogle,
-  faBrowser,
+  faWindowMaximize,
   faMoneyBillTransfer,
   faRectangleAd,
   faHandshakeAngle,
   faQuestion,
-} from "@fortawesome/free-solid-svg-icons"; // Adjust this line based on the actual import path of your icons
+} from "@fortawesome/free-solid-svg-icons";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons"; // Adjust this line based on the actual import path of your icons
 
 const steps = [
   { id: 1, label: "Select Service" },
@@ -23,7 +23,7 @@ const steps = [
 
 const services = [
   { name: "SEO", icon: faGoogle },
-  { name: "Hemsida", icon: faBrowser },
+  { name: "Hemsida", icon: faWindowMaximize },
   { name: "Konverteringsökning", icon: faMoneyBillTransfer },
   { name: "Sociala medier", icon: faRectangleAd },
   { name: "Hjälp med befintlig webbplats eller blogg", icon: faHandshakeAngle },
@@ -278,7 +278,11 @@ const MultiStepForm = () => {
                   />
                   {service.name}
                 </div>
-                <FontAwesomeIcon icon={service.icon} className="ml-2" />
+                <FontAwesomeIcon
+                  icon={service.icon}
+                  fontSize={20}
+                  className="mr-2"
+                />
               </div>
             ))}
           </div>

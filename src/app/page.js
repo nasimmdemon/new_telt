@@ -2,6 +2,7 @@ import LayoutOne from "../components/Layout/LayoutOne";
 import SliderOne from "@/components/Sections/Slider/SliderOne";
 import AboutOne from "@/components/Sections/About/AboutOne";
 import CustomAbout from "@/components/Sections/About/CustomAbout";
+import CustomAboutTwo from "@/components/Sections/About/CustomAboutTwo";
 import serviceData from "@/data/service/data.json";
 import ServiceOne from "@/components/Sections/Service/ServiceOne";
 import BrandOne from "@/components/Sections/Brand/BrandOne";
@@ -17,7 +18,7 @@ export default function Home() {
         <AboutOne bg="bg-linear-blue" />
         <ServiceOne data={serviceData} limit={16} />
 
-        <CustomAbout
+        <CustomAboutTwo
           subHeading="Varför TELT?"
           title="Effekten av TELT"
           description="Vi bygger allt efter dina behov och hjälper dig med marknadsföringen. Få skräddarsydda mjukvarulösningar och expertstöd."
@@ -34,7 +35,7 @@ export default function Home() {
           description="Processen börjar med att vi samlar in information från ditt offertformulär. Därefter presenterar vi ett uppskattat prisförslag. När du godkänt förslaget påbörjar vi arbetet."
           url="/contact"
           buttonTitle="Läs mer om hur vi arbetar med dig"
-          bg="bg-gradient-to-r from-pink to-yellow mb-12 shadow"
+          bg="bg-gradient-to-r from-blue to-themeColor mb-12 shadow"
         />
         <ContactOne classname={"bg-linear-blue"} />
       </LayoutOne>
