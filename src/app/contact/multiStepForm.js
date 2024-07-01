@@ -3,6 +3,15 @@ import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Styles from "./multiStepForm.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGoogle,
+  faBrowser,
+  faMoneyBillTransfer,
+  faRectangleAd,
+  faHandshakeAngle,
+  faQuestion,
+} from "@fortawesome/free-solid-svg-icons"; // Adjust this line based on the actual import path of your icons
 
 const steps = [
   { id: 1, label: "Select Service" },
@@ -13,12 +22,12 @@ const steps = [
 ];
 
 const services = [
-  "SEO",
-  "Hemsida",
-  "Konverteringsökning",
-  "Sociala medier",
-  "Hjälp med befintlig webbplats eller blogg",
-  "Vet ej",
+  { name: "SEO", icon: faGoogle },
+  { name: "Hemsida", icon: faBrowser },
+  { name: "Konverteringsökning", icon: faMoneyBillTransfer },
+  { name: "Sociala medier", icon: faRectangleAd },
+  { name: "Hjälp med befintlig webbplats eller blogg", icon: faHandshakeAngle },
+  { name: "Vet ej", icon: faQuestion },
 ];
 
 const questions = {
@@ -250,21 +259,26 @@ const MultiStepForm = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
-                  formData.service === service
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
-                onClick={() => setFormData({ ...formData, service })}
+                className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer transition-all duration-300 flex justify-between items-center ${
+                  formData.service === service.name
+                    ? "bg-gray-700 text-white border-gray-600"
+                    : "bg-white text-black border-gray-300"
+                } hover:bg-gray-600 hover:text-white hover:shadow-lg`}
+                onClick={() =>
+                  setFormData({ ...formData, service: service.name })
+                }
               >
-                <input
-                  type="radio"
-                  value={service}
-                  checked={formData.service === service}
-                  onChange={(e) => handleRadioChange(e, "service")}
-                  className="mr-2"
-                />
-                {service}
+                <div>
+                  <input
+                    type="radio"
+                    value={service.name}
+                    checked={formData.service === service.name}
+                    onChange={(e) => handleRadioChange(e, "service")}
+                    className="mr-2 accent-gray-200"
+                  />
+                  {service.name}
+                </div>
+                <FontAwesomeIcon icon={service.icon} className="ml-2" />
               </div>
             ))}
           </div>
@@ -285,11 +299,11 @@ const MultiStepForm = () => {
             {options.map((option, index) => (
               <div
                 key={index}
-                className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer ${
+                className={`w-full mb-2 p-2 py-4 border rounded-lg cursor-pointer transition-all duration-300 flex justify-between items-center ${
                   formData.questions[question] === option
-                    ? "bg-barActive border-black text-black"
-                    : "border-grey"
-                }`}
+                    ? "bg-gray-700 text-white border-gray-600"
+                    : "bg-white text-black border-gray-300"
+                } hover:bg-gray-600 hover:text-white hover:shadow-lg`}
                 onClick={() =>
                   setFormData((prevFormData) => ({
                     ...prevFormData,
@@ -300,14 +314,16 @@ const MultiStepForm = () => {
                   }))
                 }
               >
-                <input
-                  type="radio"
-                  value={option}
-                  checked={formData.questions[question] === option}
-                  onChange={(e) => handleRadioChange(e, question)}
-                  className="mr-2"
-                />
-                {option}
+                <div>
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={formData.questions[question] === option}
+                    onChange={(e) => handleRadioChange(e, question)}
+                    className="mr-2 accent-gray-200"
+                  />
+                  {option}
+                </div>
               </div>
             ))}
           </div>
@@ -322,7 +338,7 @@ const MultiStepForm = () => {
             type="text"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mb-4"
+            className="w-full p-2 border border-gray-300 rounded mb-4 bg-gray-800 text-gray-200"
             required
           />
           <label className="block mb-2 text-blue-500">E-post:</label>
@@ -331,7 +347,7 @@ const MultiStepForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mb-4"
+            className="w-full p-2 border border-gray-300 rounded mb-4 bg-gray-800 text-gray-200"
             required
           />
           <label className="block mb-2 text-blue-500">Telefonnummer:</label>
@@ -341,7 +357,7 @@ const MultiStepForm = () => {
               value={formData.phone}
               onChange={handlePhoneChange}
               containerClass="mb-4"
-              inputClass="w-[100%] p-2 border border-gray rounded"
+              inputClass="w-[100%] p-2 border border-gray-300 rounded bg-gray-800 text-gray-200"
               required
               className={Styles.phoneInput}
             />
