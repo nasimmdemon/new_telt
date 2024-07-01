@@ -43,48 +43,37 @@ const ContactOne = ({ classname }) => {
               <div className="item flex items-center mt-2">
                 <Icon.Check className="text-xl" />
                 <span className="body2 pl-3">
-                  Project execution and ongoing support
+                  Planering för projektgenomförande och uppföljning.
                 </span>
               </div>
               <div className="item flex items-center mt-2">
                 <Icon.Check className="text-xl" />
-                <span className="body2 pl-3">
-                  Follow-up to evaluate effectiveness and satisfaction
-                </span>
+                <span className="body2 pl-3">Genomgång av prissättning.</span>
               </div>
             </div>
             <div className="flex items-center mt-6">
               <Icon.Envelope className="text-xl" />
-              <span className="body2 pl-3">hi.avitex@gmail.com</span>
+              <span className="body2 pl-3">info@telt.se</span>
             </div>
             <div className="flex items-center mt-2">
               <Icon.PhoneCall className="text-xl" />
-              <span className="body2 pl-3">1-333-345-6868</span>
+              <span className="body2 pl-3">010 585 30 01</span>
             </div>
             <div className="flex items-center mt-2">
               <Icon.MapPin className="text-xl" />
-              <span className="body2 pl-3">
-                101 E 129th St, East Chicago, IN 46312, US
-              </span>
+              <span className="body2 pl-3">BOX 2361, 116 74 Stockholm</span>
             </div>
-            <Link
-              href={"https://maps.app.goo.gl/NMPUkvGS3x2PC4eM7"}
-              target="_blank"
-              className="inline-block underline mt-2"
-            >
-              Open map
-            </Link>
           </div>
           <div className="w-full xl:w-1/3 lg:w-[40%] max-lg:mt-10">
             <div className="form-block rounded-2xl bg-white py-6 px-7 flex flex-col gap-5">
-              <div className="heading5">Schedule a free consultation</div>
+              <div className="heading5">Boka En Kostnadsfri Konsultation</div>
               <form className="grid max-lg:grid-cols-2 gap-5 gap-y-2">
                 <div className="name w-full max-sm:col-span-2">
                   <label
                     className="inline-block caption1 text-surface1 pb-2"
                     htmlFor="name"
                   >
-                    Name
+                    Namn
                   </label>
                   <input
                     className="w-full bg-white px-4 py-3 rounded border border-outline"
@@ -99,7 +88,7 @@ const ContactOne = ({ classname }) => {
                     className="inline-block caption1 text-surface1 pb-2"
                     htmlFor="phone"
                   >
-                    Phone
+                    Telefon
                   </label>
                   <input
                     className="w-full bg-white px-4 py-3 rounded border border-outline"
@@ -114,7 +103,7 @@ const ContactOne = ({ classname }) => {
                     className="inline-block caption1 text-surface1 pb-2"
                     htmlFor="companyEmail"
                   >
-                    Company Email
+                    E-Post
                   </label>
                   <input
                     className="w-full bg-white px-4 py-3 rounded border border-outline"
@@ -129,7 +118,7 @@ const ContactOne = ({ classname }) => {
                     className="inline-block caption1 text-surface1 pb-2"
                     htmlFor="company"
                   >
-                    Company/ Organization
+                    Företag/Organisation
                   </label>
                   <input
                     className="w-full bg-white px-4 py-3 rounded border border-outline"
@@ -144,7 +133,7 @@ const ContactOne = ({ classname }) => {
                     className="inline-block caption1 text-surface1 pb-2"
                     htmlFor="cate"
                   >
-                    How can we help you?
+                    Hur kan vi hjälpa dig?
                   </label>
                   <div className="select-block relative">
                     <select
@@ -152,14 +141,14 @@ const ContactOne = ({ classname }) => {
                       name="form"
                       id="cate"
                     >
-                      <option value="Financial Planning">
-                        Financial Planning
+                      <option value="Webbutveckling">Webbutveckling</option>
+                      <option value="SEO">SEO</option>
+                      <option value="Konverteringsökning">
+                        Konverteringsökning
                       </option>
-                      <option value="Business Planning">
-                        Business Planning
-                      </option>
-                      <option value="Development Planning">
-                        Development Planning
+                      <option value="Sociala Medier">Sociala Medier</option>
+                      <option value="Befintlig Webbplats">
+                        Befintlig Webbplats
                       </option>
                     </select>
                     <Icon.CaretDown className="absolute top-1/2 right-4 -translate-y-1/2 text-xl" />
@@ -170,7 +159,7 @@ const ContactOne = ({ classname }) => {
                     className="inline-block caption1 text-surface1 pb-2"
                     htmlFor="message"
                   >
-                    Message
+                    Meddelande
                   </label>
                   <textarea
                     className="w-full bg-white px-4 py-3 rounded border border-outline display-block"
@@ -182,7 +171,7 @@ const ContactOne = ({ classname }) => {
                   ></textarea>
                 </div>
                 <div className="block-button max-lg:col-span-2 mt-3">
-                  <button className="button-main w-full">Submit</button>
+                  <button className="button-main w-full">Bekräfta</button>
                 </div>
               </form>
             </div>

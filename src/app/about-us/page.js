@@ -1,9 +1,6 @@
 import LayoutOne from "@/components/Layout/LayoutOne";
 import BenefitSeven from "@/components/Sections/Benefit/BenefitSeven";
 import BrandOne from "@/components/Sections/Brand/BrandOne";
-import TestimonialSix from "@/components/Sections/Testimonial/TestimonialSix";
-import testimonialData from "@/data/testimonial/data.json";
-import teamData from "@/data/team/data.json";
 import ContactOne from "@/components/Sections/Contact/ContactOne";
 import HeadingSubpage from "@/components/HeadingSubpage/HeadingSubpage";
 import OutstandingCaseStudies from "@/components/HeadingSubpage/OutstandingCaseStudies";
@@ -37,8 +34,7 @@ export default function AboutUs() {
         <BenefitSeven background="bg-linear" />
         <HistoryAbout />
         <BenefitAbout />
-        <TeamAbout data={teamData} start={3} limit={9} />
-        <TestimonialSix data={testimonialData} classname={"bg-linear"} />
+
         <ContactOne classname={"bg-linear-blue"} />
       </LayoutOne>
     </>
